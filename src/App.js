@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import {BrowserRouter, Route} from 'react-router-dom';
+import { ProductList } from './views/ProductList';
+import {ProductDetail} from './views/ProductDetail';
+import { Cart } from './views/Cart';
+import {Store} from './store/index';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={Store}>
+      <div className="container">
+        <h1 className='app-header'><p className='capitalize'>Amazing</p><span> </span><p className='capitalize'>Store</p></h1>
+       
+        <BrowserRouter>
+          <Route exact path='/' component={ProductList}></Route>
+          <Route path='/product/:id' component={ProductDetail}></Route>
+          <Route path='/cart' component={Cart}></Route>
+        </BrowserRouter>
+      </div>
+    </Provider>
   );
 }
-
 export default App;

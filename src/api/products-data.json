@@ -1,0 +1,53 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name":"Ar Condicionado Split Hi Wall",
+            "image":"ar_condicionado_split_hi_wall_electrolux.jpg",
+            "price": 1340.00,
+            "description": "O Ar Condicionado Split EcoTurbo Electrolux possui filtros que além de eliminar odores do ambiente, retém até 99% das bactérias. O Controle remoto em português oferece maior comodidade à você e sua família, além disso, a função EcoTurbo faz com que o ambiente seja climatizado mais rapidamente."
+        },
+        {
+            "id": 2,
+            "name":"Geladeira Brastemp Frost Free Inverse 573 litros cor Inox com Smart Bar ",
+            "image":"geladeira_brastemp_frost_free.jpg",
+            "price": 2345.60,
+            "description": "A Geladeira Brastemp Inverse Maxi com capacidade para 573 litros tem design inovador e funcional. Com refrigerador na parte de cima e freezer embaixo, os alimentos mais utilizados ficam sempre ao alcance das mãos."
+        },
+        {
+            "id": 3,
+            "name":"Iphone XS 64GB Cinza Espacial",
+            "image":"iphone_xs_64_cinza_espacial.jpg",
+            "price": 6899.00,
+            "description": "iPhone XS Cinza, com Tela de 5.8, 4G, 64 GB e Câmera de 12 MP."
+        },
+        {
+            "id": 4,
+            "name":"Lava e Seca LG Prime Touch 11Kg",
+            "image":"lava_seca_lg_11_kg.jpg",
+            "price": 2800.00,
+            "description": "Lava e Seca LG Prime Touch WD11WP6 - 11Kg 6 Motion 14 Programas de Lavagem Branca 110V."
+        },
+        {
+            "id": 5,
+            "name":"Console - PlayStation 4 Pro 1TB",
+            "image":"playstation_4.jpg",
+            "price": 2400.00,
+            "description": "Console PlayStation 4 PRO Novo Modelo PS4 1TB 1 Tera Bytes 4K - Sony."
+        },
+        {
+            "id": 6,
+            "name":"Rack com Painel TV 55\"",
+            "image":"rack_painel_tv_47.jpg",
+            "price": 400.00,
+            "description": "Rack com Painel para TV até 55” 2 Portas - Caemmun Premium Elegance."
+        },
+        {
+            "id": 7,
+            "name":"Smart TV 4K LED 55” Samsung",
+            "image":"smart_tv_4k.jpg",
+            "price": 2600.00,
+            "description": "Smart TV 4K LED 55” Samsung UN49RU7100GXZD - Wi-Fi Conversor Digital 3 HDMI 2 USB."
+        }
+    ]
+}
