@@ -1,22 +1,42 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0px auto;
   height: 100%;
+  margin-top: 150px;
 }
 
-.app-header{
-  margin: 0px 0px;
-  margin-bottom: 2%;
+.appHeader{
+  position: fixed;
+  width: 100%; 
+  top: 0px;
+  left: 0px;  
+  box-sizing: border-box;
+  background-color: #0000FF;
+  z-index: 998;
+}
+
+.appHeader h1{
   text-align: center;
   letter-spacing: 4px;
+  height: 60px;
+  padding: 10px;
+  color: white;
+  font-weight: bolder;
 }
-
 .capitalize{
   display: inline-block;
 }
 
-.capitalize::first-letter{  
-  font-weight: bolder;
+.capitalize::first-letter{   
   font-size: 40px;
-  color: blue;
+  color: yellow;
+  text-transform: capitalize;
 }

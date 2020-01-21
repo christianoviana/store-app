@@ -27,18 +27,21 @@ export class ProductDetail extends Component{
     render(){
         return(
           
-            <div className="product-details">                 
-                {this.state.product.image && <img src={require(`../assets/images/${this.state.product.image}`)} alt={this.state.product.name}/>}
-                <h3 className="product-name">{this.state.product.name}</h3>
-                <span className="product-price">
+            <div className="product-detail">                 
+                {this.state.product.image && <img className="product-detail__img" src={require(`../assets/images/${this.state.product.image}`)} alt={this.state.product.name}/>}
+                <h3 className="product-detail__name">{this.state.product.name}</h3>
+                <span className="product-detail__price">
                     <b>Price: </b> {this.state.product.price && this.state.product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL', minimumFractionDigits: 2})}
                 </span>
 
-                <p className="product-description">{this.state.product.description}</p>   
-                <p><button onClick= {() => this.props.cartAddProduct(this.state.product)}>Add to Cart</button></p>         
+                <p className="product-detail__description">{this.state.product.description}</p>   
+                <p><button 
+                        className="product-detail__button addToCart" 
+                        onClick= {() => this.props.cartAddProduct(this.state.product)}>Add to Cart</button>
+                </p>         
                 <div>                    
-                    <Link className="link-btn orange" id="btnViewCart" to={`/cart`}>View Cart</Link> 
-                    <Link className="link-btn orange" id="btnVoltar" to={`/`}>Voltar</Link>                   
+                    <Link className="product-detail__button lime" id="btnViewCart" to={`/cart`}>View Cart</Link> 
+                    <Link className="product-detail__button lime" id="btnBack" to={`/`}>Back</Link>                   
                 </div>
             </div>
         )

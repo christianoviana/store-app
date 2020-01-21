@@ -1,51 +1,78 @@
-.product-details {   
-    box-sizing: border-box;   
-    max-width: 650px; 
+.product-detail {    
+    max-width: 500px; 
+    width: 100%;
     text-align: center;
     margin: 0px auto;
 }
 
-.product-details > img{
+.product-detail__img{
     width: 210px;
     height: 167px;
 }
 
-.product-name{
+.product-detail__name{
+    padding: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.product-description{
+.product-detail__button{
+    border-radius: 5px;
+    height: 32px;
     text-align: center;
-    /* text-align: justify;*/
-} 
-
-.link-btn{
-    width: 80px;   
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid gray;
-    height: 30px;
+    margin: 0px;
+    padding: 5px;
     color: black;
+    font-weight: bolder;
+    font-size: 14px;
+    width: 100px;    
 }
 
-.link-btn.orange{
-    border: none;
-    background: #f4511e;   
+a.product-detail__button{    
+    text-decoration: none;    
+    display: inline-block;
+}
+
+.lime{
+    background-color: lime;
     color: white;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px 0px;
-    box-sizing: border-box;
+    opacity: 1;
+    transition: 0.3s;
+    --webkit-transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.addToCart{
+    background-color: transparent;
+    color: darkgreen;
+    border-color: lime;
+    text-decoration: none;    
+    display: inline-block;
+    padding: 3px;    
     opacity: 1;
     transition: 0.3s;
     --webkit-transition: 0.3s;
 }
 
-.link-btn.orange:hover{
+.product-detail__button.lime:hover{
     opacity: 0.6;
+    color: black;
 }
 
-#btnVoltar{
+.product-detail__button.addToCart:hover{
+    opacity: 0.8;
+    color: black;
+}
+
+.product-detail__description{
+    text-align: justify;
+    margin-top: 5px;
+} 
+
+#btnBack{
     margin-left: 5px;
 }
 

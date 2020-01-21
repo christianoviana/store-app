@@ -32,20 +32,21 @@ export class ProductList extends Component{
     render(){
         return (
             <div>   
-                <span id="qntCartView">{this.props.products && this.props.products.length > 0 ? this.formatValue(this.props.products.length) : ""}</span>        
-                <Link id="btnCartView" to={`/cart`}>View Cart</Link>
-                <ul className='products-list'>
-                    {this.state.products.map((e) => (                     
-                        <li><ProductItem product={e}/></li>
-                    ))}
-                </ul>
+                <span className="productList__qntCartView">{this.props.products && this.props.products.length > 0 ? this.formatValue(this.props.products.length) : ""}</span>        
+                <Link className="productList__cartView" to={`/cart`}><span class="cartIcon"></span></Link>
+                <div className="row">              
+                    {this.state.products.map((e) => (  
+                        <div className="col-6 col-md-4 col-lg-3">                              
+                            <ProductItem product={e}/>
+                        </div>                  
+                    ))}               
+                </div>                         
             </div>
         );
     }
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    console.log(cartReducer.products.length);
     return {products: cartReducer.products}
 }
 

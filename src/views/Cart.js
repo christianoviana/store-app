@@ -29,7 +29,6 @@ export class Cart extends Component{
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    console.log(cartReducer.products);
     return {products: cartReducer.products}
 }
 

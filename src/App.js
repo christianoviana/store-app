@@ -10,9 +10,11 @@ import './App.css';
 function App() {
   return (
     <Provider store={Store}>
-      <div className="container">
-        <h1 className='app-header'><p className='capitalize'>Amazing</p><span> </span><p className='capitalize'>Store</p></h1>
-       
+      <div className='appHeader'> 
+        <h1 ><p className='capitalize'>Amazing</p><span> </span><p className='capitalize'>Store</p></h1>
+      </div>    
+
+      <div className="container">                         
         <BrowserRouter>
           <Route exact path='/' component={ProductList}></Route>
           <Route path='/product/:id' component={ProductDetail}></Route>
