@@ -10,7 +10,8 @@ export class ProductList extends Component{
     constructor(props){
         super(props);
         this.state = {
-            products: []
+            products: [],
+            products_cart:[]
         }
     }
     
@@ -32,8 +33,8 @@ export class ProductList extends Component{
     render(){
         return (
             <div>   
-                <span className="productList__qntCartView">{this.props.products && this.props.products.length > 0 ? this.formatValue(this.props.products.length) : ""}</span>        
-                <Link className="productList__cartView" to={`/cart`}><span class="cartIcon"></span></Link>
+                <span className="productList__qntCartView">{this.props.products_cart && this.props.products_cart.length > 0 ? this.formatValue(this.props.products_cart.length) : ""}</span>        
+                <Link className="productList__cartView" to={`/cart`}><span className="cartIcon"></span></Link>
                 <div className="row">              
                     {this.state.products.map((e) => (  
                         <div className="col-6 col-md-4 col-lg-3">                              
@@ -47,7 +48,7 @@ export class ProductList extends Component{
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    return {products: cartReducer.products}
+    return {products_cart: cartReducer.products}
 }
 
 export default ProductList = connect(

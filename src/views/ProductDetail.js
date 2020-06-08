@@ -15,6 +15,12 @@ export class ProductDetail extends Component{
         }
     }
 
+    formatValue(value){
+        var str = "" + value
+        var pad = "00"
+        return pad.substring(0, pad.length - str.length) + str
+    }
+
     async componentWillMount(){
         let service = new ProductApi();
         const product = await service.getProductsById(this.props.match.params.id);
@@ -26,7 +32,10 @@ export class ProductDetail extends Component{
 
     render(){
         return(
-          
+            <div>   
+            <span className="productList__qntCartView">{this.props.product_cart && this.props.product_cart.length > 0 ? this.formatValue(this.props.product_cart.length) : ""}</span>        
+            <Link className="productList__cartView" to={`/cart`}><span className="cartIcon"></span></Link>
+           
             <div className="product-detail">                 
                 {this.state.product.image && <img className="product-detail__img" src={require(`../assets/images/${this.state.product.image}`)} alt={this.state.product.name}/>}
                 <h3 className="product-detail__name">{this.state.product.name}</h3>
@@ -36,19 +45,24 @@ export class ProductDetail extends Component{
 
                 <p className="product-detail__description">{this.state.product.description}</p>   
                 <p><button 
-                        className="product-detail__button addToCart" 
+                        className="btn btn-outline-success" 
                         onClick= {() => this.props.cartAddProduct(this.state.product)}>Add to Cart</button>
                 </p>         
                 <div>                    
-                    <Link className="product-detail__button lime" id="btnViewCart" to={`/cart`}>View Cart</Link> 
-                    <Link className="product-detail__button lime" id="btnBack" to={`/`}>Back</Link>                   
+                    <Link className="btn btn-primary btn-sm" id="btnViewCart" to={`/cart`}>View Cart</Link> 
+                    <Link className="btn btn-primary btn-sm" id="btnBack" to={`/`}>Back</Link>                   
                 </div>
+            </div>
             </div>
         )
     }
 }
 
+const mapStateToProps = ({cartReducer}) => { 
+    return {product_cart: cartReducer}
+}
+
 export default ProductDetail = connect(
-    undefined,
+    mapStateToProps,
     {cartAddProduct}    
 )(ProductDetail)

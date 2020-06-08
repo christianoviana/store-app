@@ -4,28 +4,29 @@ const initialState = {
     products:[]
 }
 
-export function cartReducer(state = initialState, action) {
+export function cartReducer(state = [], action) {
     switch(action.type){
         case CART_ADD_PRODUCT:
-            if(state.products.find(e => e.id === action.product.id)){
+            if(state.find(e => e.id === action.product.id)){
                 return state;
             }
 
-            state.products.push(action.product);
-
-            return {
+            return [
                 ...state,
-                products: state.products
-            };
-        case CART_REMOVE_PRODUCT:{
-            if(state.products.find(e => e.id === action.product.id)){
-                return {
-                    ...state,
-                    products: state.products.filter(e => e.id !== action.product.id)
-                };
-            }           
+                {                    
+                    id: action.product.id,
+                    image: action.product.image,
+                    name: action.product.name,
+                    description: action.product.description,
+                    price: action.product.price
+                }
+            ];
+        case CART_REMOVE_PRODUCT:{          
+            const newState = state.filter((product) => product.id !== action.product.id);
 
-            return state;
+            return [
+                ...newState
+            ];            
         }
                    
         default:

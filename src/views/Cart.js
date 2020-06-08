@@ -29,7 +29,8 @@ export class Cart extends Component{
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    return {products: cartReducer.products}
+    console.log(cartReducer);
+    return {products: cartReducer}
 }
 
 export default Cart = connect(
