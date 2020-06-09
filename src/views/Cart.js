@@ -4,24 +4,28 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {cartRemoveProduct} from '../actions/cartAction';
 import "./Cart.css";
+import ProductItem from '../components/ProductItem';
 
+const border ={
+    border: '2px solid blue'
+}
 export class Cart extends Component{
     render(){
         return(
             <div className='cart-product-container'>
-                <ul className='cart-product-list'>
+                <div className='row'>
                     {this.props.products && this.props.products.map((product) => (
-                        <li className="cart-product-item">
-                            {product.image && <img src={require(`../assets/images/${product.image}`)} alt={product.name}/>}
-                            <h3 className="cart-product-item-name">{product.name}</h3>
-                            <span className="cart-product-item-price">
-                                <b>Price: </b> {product.price && product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL', minimumFractionDigits: 2})}
-                            </span>
-                            <p><button onClick= {() => this.props.cartRemoveProduct(product)}>Remove from Cart</button></p>                   
-                        </li>
-                    ))}                               
-                </ul>
-                <p><Link to={`/`} id="btnCartVoltar">Voltar</Link></p>
+                         <div className="col-6 col-md-4 col-lg-3">                               
+                            <ProductItem product={product}/>
+                            
+                            <div className='align-btn-product--remove'>
+                                <button id='btn-product--remove' className='btn btn-outline-danger' onClick= {() => this.props.cartRemoveProduct(product)}>Remove from Cart</button>
+                            </div>                           
+                        </div> 
+                    ))}                     
+                </div>                     
+              
+                <Link to={`/`} id="btnCartVoltar">Voltar</Link>
             </div>
        
         );
@@ -29,7 +33,6 @@ export class Cart extends Component{
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    console.log(cartReducer);
     return {products: cartReducer}
 }
 

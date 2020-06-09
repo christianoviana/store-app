@@ -48,7 +48,7 @@ export class ProductList extends Component{
 }
 
 const mapStateToProps = ({cartReducer}) => {
-    return {products_cart: cartReducer.products}
+    return {products_cart: cartReducer}
 }
 
 export default ProductList = connect(

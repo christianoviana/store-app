@@ -1,8 +1,5 @@
 import {CART_ADD_PRODUCT, CART_REMOVE_PRODUCT} from '../actions/actionTypes';
 
-const initialState = {
-    products:[]
-}
 
 export function cartReducer(state = [], action) {
     switch(action.type){
