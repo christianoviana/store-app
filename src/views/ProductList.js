@@ -37,7 +37,7 @@ export class ProductList extends Component{
                 <Link className="productList__cartView" to={`/cart`}><span className="cartIcon"></span></Link>
                 <div className="row">              
                     {this.state.products.map((e) => (  
-                        <div className="col-6 col-md-4 col-lg-3">                              
+                        <div id={e.id} className="col-6 col-md-4 col-lg-3 productList__item">                              
                             <ProductItem product={e}/>
                         </div>                  
                     ))}               
