@@ -6,12 +6,10 @@
     margin: 6px 12px;
 }
 
-.productItem,    
-.productItem:active {    
+.productItem{    
     text-align: center;
     height: 350px;
     padding: 5px;      
-    box-shadow: none;
 }
 
 .productList__item{    
