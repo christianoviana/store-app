@@ -19,7 +19,7 @@ export class Cart extends Component{
                             <ProductItem product={product}/>
                             
                             <div className='align-btn-product--remove'>
-                                <button id='btn-product--remove' className='btn btn-outline-danger' onClick= {() => this.props.cartRemoveProduct(product)}>Remove from Cart</button>
+                                <button id='btn-product--remove' className='btn btn-outline-danger' onClick= {() => this.props.cartRemoveProduct(product)}>Remove</button>
                             </div>                           
                         </div> 
                     ))}   
